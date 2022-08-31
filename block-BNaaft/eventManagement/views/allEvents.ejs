@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <button class="btn"><a href="/">GO TO HOMEPAGE</a></button>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+<body>
+    <h1>CHECK OUT ALL EVENTS BELOW</h1>
+    <section class="flex">
+        <div class="margin-side">
+            <span>Filter By Category</span>
+            <form action="/category/" method="post">
+                <select class="padding-small" name="category" id="category">
+                    <option value="all">ALL</option>
+                    <% categories.forEach(category => { %>
+                        <option value="/category/<%=category.content%>"> <%= category.content %></option>
+                    <% }) %>
+            </select>
+            <input type="submit">
+            </form>
+        </div>
+        <div class="margin-side">
+            <span>Filter By Location</span>
+            <form action="/event/" method="post">
+                <select class="padding-small" name="host" id="host">
+                    <option value="all">ALL</option>
+                    <% array.forEach(host => { %>
+                        <option value="/event/<%=host%>"> <%= host %></option>
+                   <% }) %>
+            </select>
+            <input type="submit">
+            </form>
+        </div>
+    </section>
+    
+    <section class="container flex">
+        <div class="flex-60 padding column">
+        <% events.forEach(event => { %>
+            <div class="container column padding margin border">
+                <h2 class="margin udl"><%= event.title %></h2>
+                <p class="margin"><span class="text-blue">Details:&nbsp;</span><%= event.summary %></p>
+                <p class="margin"><span class="text-red">Date:&nbsp;</span> <%= event.start_date %></p>
+                <button class="btn-small"><a href="/event/<%= event._id%>">READ MORE</a></button>
+            </div>
+           <% }) %>
+        </div>
+           <aside class="padding sidebar column flex-25">
+            <h4>CATEGORIES</h4>
+            <% categories.forEach(category => { %>
+                <ul>
+                    <li><a href="/category/<%= category.content %>"><%= category.content %></a></li>
+                </ul>
+            <% }) %>
+
+           </aside>
+    </section>
+
+    
+</body>
+</html>
