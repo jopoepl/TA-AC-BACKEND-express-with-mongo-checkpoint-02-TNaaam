@@ -1,0 +1,275 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color:darkturquoise;
+}
+
+a {
+  color: #00B7FF;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+i {
+    font-family:none;
+}
+
+html {
+    font-size: 10px;
+}
+
+:root {
+    --accent: #ea5333;
+    --background: #fef9f7;
+    --overlay: rgba(255, 255, 255, 0.9);
+    --font-color: #867a77;
+    --text-white: whitesmoke; 
+
+}
+
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.border {
+   border: 1px solid darkviolet;
+}
+
+#active {
+    color: var(--accent);
+}    
+
+.activebg {
+    background-color: var(--accent);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+p{
+    line-height: 1.5;
+}
+
+/* FLEX */
+
+.flex {
+    display: flex;
+}
+
+.column {
+  display: flex;
+    flex-direction: column;
+}
+
+.justify-btwn {
+    justify-content: space-between;
+
+}
+.justify-start {
+    justify-content: flex-start;
+
+}
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.item-center {
+    align-items: center;
+}
+
+.item-start {
+    align-items: flex-start;
+}
+
+.item-end {
+    align-items: flex-end;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+
+
+/* Container */
+
+.container {
+    max-width: 1380px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+.margin {
+    margin: 2rem 0;
+}
+
+.padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* Columns */
+
+.flex-15 {
+    flex: 0 1 15%;
+}
+
+.flex-20 {
+    flex: 0 1 20%
+}
+
+.flex-24 {
+    flex: 0 1 24%;
+}
+
+.flex-25 {
+    flex: 0 1 25%;
+}
+
+
+.flex-30 {
+    flex: 0 1 30%;
+}
+
+.flex-32 {
+    flex: 0 1 32%;
+}
+
+.flex-40 {
+    flex: 0 1 40%;
+}
+
+
+.flex-48 {
+    flex: 0 1 48%;
+}
+.flex-50 {
+    flex: 0 1 50%;
+}
+
+.flex-60 {
+    flex: 0 1 60%;
+}
+
+.flex-75 {
+    flex: 0 1 75%
+}
+
+.flex-85 {
+    flex: 0 1 85%;
+}
+
+.grow {
+    flex: 1 1 auto;
+}
+
+/* Full Width */
+
+.full-width {
+    width: 100%;
+}
+
+/* Centered Elements */
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.2rem;
+    cursor: pointer;
+    background-color: aquamarine;
+    color: black;
+
+}
+
+.btn-small {
+  display: inline-block;
+  padding: 1rem 2.2rem;
+  cursor: pointer;
+  background-color: blanchedalmond;
+  color: darkblue;
+}
+
+/* Text Styles */
+
+h2 {
+  font-size: 30px;
+}
+
+.udl {
+  text-decoration: underline;
+}
+
+.text-red {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+.text-blue {
+  color: darkblue;
+  font-size: 20px;
+  font-weight: bold;
+}
+.text-green {
+  color: darkgreen;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+.category {
+  font-style: italic;
+  margin: 10px;
+  text-transform: uppercase;
+}
+.width-50 {
+  width: 50%;
+}
+
+.width-10 {
+  width: 10%;
+}
+
+.tiny {
+  font-size: 10px;
+}
+.remark {
+  margin: 10px 30px;
+} 
+
+.padding-small {
+  padding: 6px;
+  margin: 5px;
+}
+
+.sidebar {
+  font-size: 30px;
+  color: darkviolet;
+  padding-left: 40px;
+  width: 20%;
+}
+
+.margin-side{
+  margin: auto 20px;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn"><a href="/event">Browse All EVENTS</a></button>
+    <form class="container column" action="/event/add" method="post">
+        <input class="margin" type="text" name="title" placeholder="Title">
+        <textarea name="summary" id="summary" cols="30" rows="10">
+            Event Summary
+        </textarea>
+        <input class="margin" type="text" name="host" placeholder="Host">
+        <input class="margin" type="date" name="start_date" placeholder="Start Date">
+        <input class="margin" type="date" name="end_date" placeholder="End Date">
+    <div class="column">
+        <h3>Select Categorie(s)</h3>
+        <div  class="margin">
+            <input type="checkbox" name="coding">
+            <label for="coding">Coding</label>
+        </div>
+        <div  class="margin">
+            <input type="checkbox" name="sports">
+            <label for="sports">Sports</label>
+        </div>
+        <div class="margin">
+            <input type="checkbox" name="tech">
+        <label for="tech">Tech</label>
+        </div>
+        <div class="margin">
+        <input type="checkbox" name="cultural">
+        <label for="cultural">Cultural</label>
+        </div>
+    </div>
+    <input class="btn" type="submit">
+    </form>
+    <!-- <form action=""></form> -->
+</body>
+</html>
