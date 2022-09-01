@@ -25,12 +25,25 @@
         </div>
         <div class="margin-side">
             <span>Filter By Location</span>
-            <form action="/event/" method="post">
+            <form action="/host/" method="post">
                 <select class="padding-small" name="host" id="host">
                     <option value="all">ALL</option>
                     <% array.forEach(host => { %>
-                        <option value="/event/<%=host%>"> <%= host %></option>
+                       
+                        <option value="/host/<%=host%>"> <%= host %></option>
                    <% }) %>
+            </select>
+            <button type="submit">SUBMIT</button>
+            </form>
+        </div>
+        <div class="margin-side">
+            <span>Filter By Category</span>
+            <form action="/category/" method="post">
+                <select class="padding-small" name="category" id="category">
+                    <option value="all">ALL</option>
+                    <% categories.forEach(category => { %>
+                        <option value="/category/<%=category.content%>"> <%= category.content %></option>
+                    <% }) %>
             </select>
             <input type="submit">
             </form>

@@ -8,13 +8,21 @@ var Event = require(`../models/event`)
 
 
 router.get(`/:category/`, (req, res) => {
-    let category = req.params.category
-    Event.find({category: {$exists: true} }, (err, events) => {
-        if(err) console.log(err)
-        res.render(`eventByCategory`, {events: events, category: category})
-    })
 
+    let category = req.params.category
+    Category.findOne({content: category}).populate("event").exec((err, category) => {
+        if(err) console.log(err)
+        console.log(category, "category")
+    let events = category.event
+    res.render(`eventByCategory`, {events: events, category: category})
+    })
 })
+
+
+// Event.find({category: {$exists: true} }, (err, events) => {
+//     if(err) console.log(err)
+//     res.render(`eventByCategory`, {events: events, category: category})
+// })
 
 router.post(`/`, (req, res) => {
     console.log(req.body)

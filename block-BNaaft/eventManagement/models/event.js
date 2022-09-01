@@ -5,7 +5,7 @@ var Schema = mongoose.Schema
 var eventSchema = new Schema({
     title: {type: String, required: true},
     summary: String,
-    host: String,
+    host: {type: String, uppercase: true},
     start_date: Date,
     end_date: Date,
     sports: String,
