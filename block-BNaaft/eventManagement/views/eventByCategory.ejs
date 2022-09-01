@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <button class="btn"><a href="/">GO TO HOMEPAGE</a></button>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+<body>
+    <h1>CHECK OUT ALL EVENTS UNDER <span class="category"><%category.content %></span></h1>
+   
+       <% events.forEach(event => { %>
+        <div class="container column padding margin border">
+            <h2 class="margin udl"><%= event.title %></h2>
+            <p class="margin"><span class="text-blue">Details:&nbsp;</span><%= event.summary %></p>
+            <p class="margin"><span class="text-red">Date:&nbsp;</span> <%= event.start_date %></p>
+            <button class="btn-small"><a href="/event/<%= event._id%>">READ MORE</a></button>
+        </div>
+       <% }) %>
+    
+</body>
+</html>

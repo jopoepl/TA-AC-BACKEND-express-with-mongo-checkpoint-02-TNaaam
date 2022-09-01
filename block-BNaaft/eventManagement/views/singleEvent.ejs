@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <button class="btn"><a href="/">GO TO HOMEPAGE</a></button>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+<body>
+    <h1>CHECK OUT ALL <%= event.title%> EVENT BELOW</h1>
+        <div class="container column padding margin border">
+            <h2 class="margin udl"><%= event.title %></h2>
+            <p class="margin"><span class="text-blue">Details:&nbsp;</span><%= event.summary %></p>
+            <p class="margin"><span class="text-green">Start Date:&nbsp;</span> <%= event.start_date %></p>
+            <p class="margin"><span class="text-red">End Date:&nbsp;</span> <%= event.end_date%></p>
+            <p class="margin"><span class="text-blue">HOST:&nbsp;</span> <%= event.host%></p>
+            <div class="margin flex">
+               <% Object.keys(event.toJSON()).forEach(key => { %>
+                   <% if(event[key] === `on`) { %>
+                        <span class="category"><a href="/category/<%= key %>"><%= key %></a></span>
+                    <% } %>
+               <% }) %>
+            </div>
+        <div class="container">
+            <button class="btn-small"><a href="/event/<%= event._id%>/like">LIKE <%= event.likes%></a></button>
+            <button class="btn-small"><a href="/event/<%= event._id%>/edit">EDIT</a></button>
+            <button class="btn-small"><a href="/event/<%= event._id%>/delete">DELETE</a></button>
+        </div>
+        </div>
+        <form class="column width-50" action="/remark/<%= event._id%>/add" method="post">
+            <input class="padding" type="text" name="content" placeholder="Enter Your Remark">
+            <input class="margin" type="submit">
+        </form>
+        <div class="margin container column">
+            <%= console.log(remark, "REMARK")%>
+            <%remark.forEach(remark => { %>
+                <span class="remark width-50"><%= remark.content %></span>
+                <div class="flex">
+                    <button class=" tiny margin width-10"><a href="/remark/<%= remark._id%>/like">LIKE <%= remark.likes%></a></button>
+                    <button class=" tiny margin width-10"><a href="/remark/<%= remark._id%>/edit">EDIT</a></button>
+                    <button class="tiny margin width-10"><a href="/remark/<%= remark._id%>/delete">DELETE</a></button>
+                </div>
+                
+           <% }) %>
+        </div>
+</body>
+</html>
